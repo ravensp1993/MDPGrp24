@@ -358,6 +358,11 @@ public class ArenaActivity extends Activity implements SensorEventListener {
                         pgv.mapInString(map, col, row, direction);
                     }
 
+                    //amd
+                    if(readMessage.contains("grid: ")&&readMessage.contains("robotPosition: ")) {
+
+                    }
+
                     if(readMessage.contains("GRID 5")) {
                         int row = Integer.parseInt(readMessage.substring(readMessage.indexOf("5"), readMessage.indexOf("5")+1));
 
@@ -398,15 +403,15 @@ public class ArenaActivity extends Activity implements SensorEventListener {
                         }
                     }
                     //modify add per line
-                    if (readMessage.contains("forward")) {
+                    if (readMessage.contains("FORWARD")) {
                         tvStatus.setText("Robot Moving Forward");
-                    } else if (readMessage.contains("stop")) {
+                    } else if (readMessage.contains("STOP")) {
                         tvStatus.setText("Robot Stop");
-                    }else if(readMessage.contains("back")){
+                    }else if(readMessage.contains("BACK")){
                         tvStatus.setText("Robot Moving Back");
-                    } else if (readMessage.contains("left")) {
+                    } else if (readMessage.contains("LEFT")) {
                         tvStatus.setText("Robot Going Left");
-                    } else if (readMessage.contains("right")) {
+                    } else if (readMessage.contains("RIGHT")) {
                         tvStatus.setText("Robot Going Right");
                     }
                     break;
